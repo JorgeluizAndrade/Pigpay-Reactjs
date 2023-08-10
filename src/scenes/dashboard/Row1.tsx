@@ -38,10 +38,11 @@ const Row1 = () => {
     return (
       data &&
       data[0].monthlyData.map(({ month, revenue, expenses }) => {
+        const numericRevenue = parseFloat(revenue);
         return {
           name: month.substring(0, 3),
-          revenue: revenue,
-          profit: (revenue - expenses).toFixed(2),
+          revenue: numericRevenue,
+          profit: (numericRevenue - expenses ).toFixed(2),
         };
       })
     );
